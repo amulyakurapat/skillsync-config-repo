@@ -41,6 +41,17 @@ spring:
               uri: http://localhost:8088
               predicates:
                 - Path=/groups/**
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowedOrigins: "*"
+                allowedMethods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - OPTIONS
+                allowedHeaders: "*"
 
 jwt:
   secret: c2tpbGxzeW5jc2VjcmV0a2V5c2tpbGxzeW5jc2VjcmV0a2V5
