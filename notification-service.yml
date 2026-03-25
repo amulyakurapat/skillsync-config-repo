@@ -4,6 +4,19 @@ server:
 spring:
   application:
     name: notification-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/skillsync_notification
+    username: root
+    password: Shally@183
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:
