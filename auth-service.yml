@@ -5,9 +5,9 @@ spring:
   application:
     name: auth-service
   datasource:
-    url: ${DB_URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: jdbc:mysql://localhost:3306/skillsync_auth
+    username: root
+    password: Shally@183
   jpa:
     hibernate:
       ddl-auto: update
@@ -19,4 +19,4 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 jwt:
-  secret: ${JWT_SECRET}
+  secret: c2tpbGxzeW5jc2VjcmV0a2V5c2tpbGxzeW5jc2VjcmV0a2V5
