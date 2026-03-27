@@ -6,8 +6,8 @@ spring:
     name: notification-service
   datasource:
     url: jdbc:mysql://localhost:3306/skillsync_notification
-    username: root
-    password: Shally@183
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -20,8 +20,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: saiamulyakurapati1@gmail.com
-    password: nzejpsainjimqgmr
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
