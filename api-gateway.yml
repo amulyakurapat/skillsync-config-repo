@@ -13,36 +13,50 @@ spring:
               uri: http://localhost:8081
               predicates:
                 - Path=/auth/swagger-ui/**,/auth/v3/api-docs/**
+              filters:
+                - StripPrefix=1
 
             - id: user-swagger
               uri: http://localhost:8082
               predicates:
                 - Path=/users/swagger-ui/**,/users/v3/api-docs/**
+              filters:
+                - StripPrefix=1
 
             - id: skill-swagger
               uri: http://localhost:8084
               predicates:
                 - Path=/skills/swagger-ui/**,/skills/v3/api-docs/**
+              filters:
+                - StripPrefix=1
 
             - id: mentor-swagger
               uri: http://localhost:8083
               predicates:
                 - Path=/mentors/swagger-ui/**,/mentors/v3/api-docs/**
+              filters:
+                - StripPrefix=1
 
             - id: session-swagger
               uri: http://localhost:8085
               predicates:
                 - Path=/sessions/swagger-ui/**,/sessions/v3/api-docs/**
+              filters:
+                - StripPrefix=1
 
             - id: review-swagger
               uri: http://localhost:8086
               predicates:
                 - Path=/reviews/swagger-ui/**,/reviews/v3/api-docs/**
+              filters:
+                - StripPrefix=1
 
             - id: notification-swagger
               uri: http://localhost:8088
               predicates:
                 - Path=/notifications/swagger-ui/**,/notifications/v3/api-docs/**
+              filters:
+                - StripPrefix=1
 
             
             - id: auth-service
