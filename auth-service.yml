@@ -29,8 +29,8 @@ management:
   endpoint:
     health:
       show-details: always
-   health:
-     zipkin:
+  health:
+    zipkin:
       enabled: false
   tracing:
     sampling:
