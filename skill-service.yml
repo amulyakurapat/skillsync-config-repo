@@ -1,6 +1,5 @@
 server:
   port: 8084
-
 spring:
   application:
     name: skill-service
@@ -14,12 +13,10 @@ spring:
     show-sql: true
   cache:
     type: simple
-
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-
 management:
   endpoints:
     web:
@@ -34,3 +31,13 @@ management:
   zipkin:
     tracing:
       endpoint: http://localhost:9411/api/v2/spans
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+  servers:
+    - url: http://localhost:8080/skills
+      description: Via API Gateway
+    - url: http://localhost:8084
+      description: Direct
