@@ -1,6 +1,5 @@
 server:
   port: 8083
-
 spring:
   application:
     name: mentor-service
@@ -12,12 +11,10 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
-
 management:
   endpoints:
     web:
@@ -32,3 +29,13 @@ management:
   zipkin:
     tracing:
       endpoint: http://localhost:9411/api/v2/spans
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+  servers:
+    - url: http://localhost:8080/mentors
+      description: Via API Gateway
+    - url: http://localhost:8083
+      description: Direct
