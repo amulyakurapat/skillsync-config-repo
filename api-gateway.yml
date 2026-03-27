@@ -117,7 +117,7 @@ springdoc:
       - name: Notification Service API
         url: /notifications/v3/api-docs
   api-docs:
-    enabled: false
+    enabled: true
 
 logging:
   level:
