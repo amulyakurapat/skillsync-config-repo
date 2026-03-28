@@ -4,16 +4,19 @@ server:
 spring:
   application:
     name: session-service
+
   datasource:
-    url: jdbc:mysql://localhost:3306/skillsync_session
+    url: jdbc:mysql://mysql:3306/skillsync_session
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
+
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+
   rabbitmq:
-    host: localhost
+    host: rabbitmq
     port: 5672
     username: guest
     password: guest
@@ -21,30 +24,35 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://eureka-server:8761/eureka/
 
 management:
   endpoints:
     web:
       exposure:
         include: health,info,metrics
+
   endpoint:
     health:
       show-details: always
+
   tracing:
     sampling:
       probability: 1.0
+
   zipkin:
     tracing:
-      endpoint: http://localhost:9411/api/v2/spans
+      endpoint: http://zipkin:9411/api/v2/spans
 
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+
   api-docs:
     path: /v3/api-docs
+
   servers:
-    - url: http://localhost:8080/sessions
+    - url: http://api-gateway:8080/sessions
       description: Via API Gateway
-    - url: http://localhost:8085
+    - url: http://session-service:8085
       description: Direct
