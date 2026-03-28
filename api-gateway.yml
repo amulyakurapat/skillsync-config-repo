@@ -114,8 +114,7 @@ springdoc:
         url: /sessions/v3/api-docs
       - name: Review Service API
         url: /reviews/v3/api-docs
-      - name: Notification Service API
-        url: /notifications/v3/api-docs
+     
   api-docs:
     enabled: true
 
