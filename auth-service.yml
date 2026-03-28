@@ -1,46 +1,59 @@
 server:
   port: 8081
+
 spring:
   application:
     name: auth-service
+
   datasource:
-    url: jdbc:mysql://localhost:3306/skillsync_auth
+    url: jdbc:mysql://mysql:3306/skillsync_auth
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
+
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka-server:8761/eureka/
+
 jwt:
   secret: ${JWT_SECRET}
+
 management:
   endpoints:
     web:
       exposure:
         include: health,info,metrics
+
   endpoint:
     health:
       show-details: always
+
   health:
     zipkin:
       enabled: false
+
   tracing:
     sampling:
       probability: 1.0
+
   zipkin:
     tracing:
-      endpoint: http://localhost:9411/api/v2/spans
+      endpoint: http://zipkin:9411/api/v2/spans
+
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+
   api-docs:
     path: /v3/api-docs
+
   servers:
-    - url: http://localhost:8080/auth
+    - url: http://api-gateway:8080/auth
       description: Via API Gateway
-    - url: http://localhost:8081
+    - url: http://auth-service:8081
       description: Direct
