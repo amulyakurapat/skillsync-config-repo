@@ -5,6 +5,9 @@ spring:
   application:
     name: notification-service
 
+  config:
+    import: configserver:http://config-server:8888
+
   datasource:
     url: jdbc:mysql://host.docker.internal:3306/skillsync_notification
     username: ${DB_USERNAME}
@@ -33,10 +36,6 @@ spring:
           starttls:
             enable: true
 
-  cloud:
-    config:
-      enabled: false
-
 eureka:
   client:
     service-url:
@@ -47,15 +46,12 @@ management:
     web:
       exposure:
         include: health,info,metrics
-
   endpoint:
     health:
       show-details: always
-
   tracing:
     sampling:
       probability: 1.0
-
   zipkin:
     tracing:
       endpoint: http://zipkin:9411/api/v2/spans
@@ -63,10 +59,8 @@ management:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
-
   api-docs:
     path: /v3/api-docs
-
   servers:
     - url: http://api-gateway:8080/notifications
       description: Via API Gateway
