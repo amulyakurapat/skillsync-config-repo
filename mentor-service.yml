@@ -6,7 +6,7 @@ spring:
     name: mentor-service
 
   datasource:
-    url: jdbc:mysql://mysql:3306/skillsync_mentor
+    url: jdbc:mysql://host.docker.internal:3306/skillsync_mentor
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
 
