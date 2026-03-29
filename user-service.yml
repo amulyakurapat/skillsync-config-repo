@@ -6,7 +6,7 @@ spring:
     name: user-service
 
   datasource:
-    url: jdbc:mysql://mysql:3306/skillsync_user
+    url: jdbc:mysql://host.docker.internal:3306/skillsync_user
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
 
