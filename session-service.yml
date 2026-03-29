@@ -6,7 +6,7 @@ spring:
     name: session-service
 
   datasource:
-    url: jdbc:mysql://mysql:3306/skillsync_session
+    url: jdbc:mysql://host.docker.internal:3306/skillsync_session
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
 
